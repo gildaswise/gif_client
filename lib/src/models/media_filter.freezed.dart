@@ -19,6 +19,8 @@ mixin _$MediaFilter {
   String get name => throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
+    required TResult Function(String name) preview,
+    required TResult Function(String name) mp4,
     required TResult Function(String name) nanogif,
     required TResult Function(String name) tinygif,
     required TResult Function(String name) nanogifTransparent,
@@ -26,6 +28,8 @@ mixin _$MediaFilter {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(String name)? preview,
+    TResult? Function(String name)? mp4,
     TResult? Function(String name)? nanogif,
     TResult? Function(String name)? tinygif,
     TResult? Function(String name)? nanogifTransparent,
@@ -33,6 +37,8 @@ mixin _$MediaFilter {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
+    TResult Function(String name)? preview,
+    TResult Function(String name)? mp4,
     TResult Function(String name)? nanogif,
     TResult Function(String name)? tinygif,
     TResult Function(String name)? nanogifTransparent,
@@ -41,6 +47,8 @@ mixin _$MediaFilter {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
+    required TResult Function(_MediaFilterPreview value) preview,
+    required TResult Function(_MediaFilterMp4 value) mp4,
     required TResult Function(_MediaFilterNanoGif value) nanogif,
     required TResult Function(_MediaFilterTinygif value) tinygif,
     required TResult Function(_MediaFilterNanogifTransparent value)
@@ -49,6 +57,8 @@ mixin _$MediaFilter {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_MediaFilterPreview value)? preview,
+    TResult? Function(_MediaFilterMp4 value)? mp4,
     TResult? Function(_MediaFilterNanoGif value)? nanogif,
     TResult? Function(_MediaFilterTinygif value)? tinygif,
     TResult? Function(_MediaFilterNanogifTransparent value)? nanogifTransparent,
@@ -56,6 +66,8 @@ mixin _$MediaFilter {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
+    TResult Function(_MediaFilterPreview value)? preview,
+    TResult Function(_MediaFilterMp4 value)? mp4,
     TResult Function(_MediaFilterNanoGif value)? nanogif,
     TResult Function(_MediaFilterTinygif value)? tinygif,
     TResult Function(_MediaFilterNanogifTransparent value)? nanogifTransparent,
@@ -99,6 +111,325 @@ class _$MediaFilterCopyWithImpl<$Res, $Val extends MediaFilter>
               as String,
     ) as $Val);
   }
+}
+
+/// @nodoc
+abstract class _$$MediaFilterPreviewImplCopyWith<$Res>
+    implements $MediaFilterCopyWith<$Res> {
+  factory _$$MediaFilterPreviewImplCopyWith(_$MediaFilterPreviewImpl value,
+          $Res Function(_$MediaFilterPreviewImpl) then) =
+      __$$MediaFilterPreviewImplCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call({String name});
+}
+
+/// @nodoc
+class __$$MediaFilterPreviewImplCopyWithImpl<$Res>
+    extends _$MediaFilterCopyWithImpl<$Res, _$MediaFilterPreviewImpl>
+    implements _$$MediaFilterPreviewImplCopyWith<$Res> {
+  __$$MediaFilterPreviewImplCopyWithImpl(_$MediaFilterPreviewImpl _value,
+      $Res Function(_$MediaFilterPreviewImpl) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? name = null,
+  }) {
+    return _then(_$MediaFilterPreviewImpl(
+      name: null == name
+          ? _value.name
+          : name // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$MediaFilterPreviewImpl extends _MediaFilterPreview {
+  const _$MediaFilterPreviewImpl({this.name = 'preview'}) : super._();
+
+  @override
+  @JsonKey()
+  final String name;
+
+  @override
+  String toString() {
+    return 'MediaFilter.preview(name: $name)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$MediaFilterPreviewImpl &&
+            (identical(other.name, name) || other.name == name));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, name);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$MediaFilterPreviewImplCopyWith<_$MediaFilterPreviewImpl> get copyWith =>
+      __$$MediaFilterPreviewImplCopyWithImpl<_$MediaFilterPreviewImpl>(
+          this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(String name) preview,
+    required TResult Function(String name) mp4,
+    required TResult Function(String name) nanogif,
+    required TResult Function(String name) tinygif,
+    required TResult Function(String name) nanogifTransparent,
+  }) {
+    return preview(name);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(String name)? preview,
+    TResult? Function(String name)? mp4,
+    TResult? Function(String name)? nanogif,
+    TResult? Function(String name)? tinygif,
+    TResult? Function(String name)? nanogifTransparent,
+  }) {
+    return preview?.call(name);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(String name)? preview,
+    TResult Function(String name)? mp4,
+    TResult Function(String name)? nanogif,
+    TResult Function(String name)? tinygif,
+    TResult Function(String name)? nanogifTransparent,
+    required TResult orElse(),
+  }) {
+    if (preview != null) {
+      return preview(name);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_MediaFilterPreview value) preview,
+    required TResult Function(_MediaFilterMp4 value) mp4,
+    required TResult Function(_MediaFilterNanoGif value) nanogif,
+    required TResult Function(_MediaFilterTinygif value) tinygif,
+    required TResult Function(_MediaFilterNanogifTransparent value)
+        nanogifTransparent,
+  }) {
+    return preview(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_MediaFilterPreview value)? preview,
+    TResult? Function(_MediaFilterMp4 value)? mp4,
+    TResult? Function(_MediaFilterNanoGif value)? nanogif,
+    TResult? Function(_MediaFilterTinygif value)? tinygif,
+    TResult? Function(_MediaFilterNanogifTransparent value)? nanogifTransparent,
+  }) {
+    return preview?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_MediaFilterPreview value)? preview,
+    TResult Function(_MediaFilterMp4 value)? mp4,
+    TResult Function(_MediaFilterNanoGif value)? nanogif,
+    TResult Function(_MediaFilterTinygif value)? tinygif,
+    TResult Function(_MediaFilterNanogifTransparent value)? nanogifTransparent,
+    required TResult orElse(),
+  }) {
+    if (preview != null) {
+      return preview(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _MediaFilterPreview extends MediaFilter {
+  const factory _MediaFilterPreview({final String name}) =
+      _$MediaFilterPreviewImpl;
+  const _MediaFilterPreview._() : super._();
+
+  @override
+  String get name;
+  @override
+  @JsonKey(ignore: true)
+  _$$MediaFilterPreviewImplCopyWith<_$MediaFilterPreviewImpl> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$MediaFilterMp4ImplCopyWith<$Res>
+    implements $MediaFilterCopyWith<$Res> {
+  factory _$$MediaFilterMp4ImplCopyWith(_$MediaFilterMp4Impl value,
+          $Res Function(_$MediaFilterMp4Impl) then) =
+      __$$MediaFilterMp4ImplCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call({String name});
+}
+
+/// @nodoc
+class __$$MediaFilterMp4ImplCopyWithImpl<$Res>
+    extends _$MediaFilterCopyWithImpl<$Res, _$MediaFilterMp4Impl>
+    implements _$$MediaFilterMp4ImplCopyWith<$Res> {
+  __$$MediaFilterMp4ImplCopyWithImpl(
+      _$MediaFilterMp4Impl _value, $Res Function(_$MediaFilterMp4Impl) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? name = null,
+  }) {
+    return _then(_$MediaFilterMp4Impl(
+      name: null == name
+          ? _value.name
+          : name // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$MediaFilterMp4Impl extends _MediaFilterMp4 {
+  const _$MediaFilterMp4Impl({this.name = 'mp4'}) : super._();
+
+  @override
+  @JsonKey()
+  final String name;
+
+  @override
+  String toString() {
+    return 'MediaFilter.mp4(name: $name)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$MediaFilterMp4Impl &&
+            (identical(other.name, name) || other.name == name));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, name);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$MediaFilterMp4ImplCopyWith<_$MediaFilterMp4Impl> get copyWith =>
+      __$$MediaFilterMp4ImplCopyWithImpl<_$MediaFilterMp4Impl>(
+          this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(String name) preview,
+    required TResult Function(String name) mp4,
+    required TResult Function(String name) nanogif,
+    required TResult Function(String name) tinygif,
+    required TResult Function(String name) nanogifTransparent,
+  }) {
+    return mp4(name);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(String name)? preview,
+    TResult? Function(String name)? mp4,
+    TResult? Function(String name)? nanogif,
+    TResult? Function(String name)? tinygif,
+    TResult? Function(String name)? nanogifTransparent,
+  }) {
+    return mp4?.call(name);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(String name)? preview,
+    TResult Function(String name)? mp4,
+    TResult Function(String name)? nanogif,
+    TResult Function(String name)? tinygif,
+    TResult Function(String name)? nanogifTransparent,
+    required TResult orElse(),
+  }) {
+    if (mp4 != null) {
+      return mp4(name);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_MediaFilterPreview value) preview,
+    required TResult Function(_MediaFilterMp4 value) mp4,
+    required TResult Function(_MediaFilterNanoGif value) nanogif,
+    required TResult Function(_MediaFilterTinygif value) tinygif,
+    required TResult Function(_MediaFilterNanogifTransparent value)
+        nanogifTransparent,
+  }) {
+    return mp4(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_MediaFilterPreview value)? preview,
+    TResult? Function(_MediaFilterMp4 value)? mp4,
+    TResult? Function(_MediaFilterNanoGif value)? nanogif,
+    TResult? Function(_MediaFilterTinygif value)? tinygif,
+    TResult? Function(_MediaFilterNanogifTransparent value)? nanogifTransparent,
+  }) {
+    return mp4?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_MediaFilterPreview value)? preview,
+    TResult Function(_MediaFilterMp4 value)? mp4,
+    TResult Function(_MediaFilterNanoGif value)? nanogif,
+    TResult Function(_MediaFilterTinygif value)? tinygif,
+    TResult Function(_MediaFilterNanogifTransparent value)? nanogifTransparent,
+    required TResult orElse(),
+  }) {
+    if (mp4 != null) {
+      return mp4(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _MediaFilterMp4 extends MediaFilter {
+  const factory _MediaFilterMp4({final String name}) = _$MediaFilterMp4Impl;
+  const _MediaFilterMp4._() : super._();
+
+  @override
+  String get name;
+  @override
+  @JsonKey(ignore: true)
+  _$$MediaFilterMp4ImplCopyWith<_$MediaFilterMp4Impl> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -169,6 +500,8 @@ class _$MediaFilterNanoGifImpl extends _MediaFilterNanoGif {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
+    required TResult Function(String name) preview,
+    required TResult Function(String name) mp4,
     required TResult Function(String name) nanogif,
     required TResult Function(String name) tinygif,
     required TResult Function(String name) nanogifTransparent,
@@ -179,6 +512,8 @@ class _$MediaFilterNanoGifImpl extends _MediaFilterNanoGif {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(String name)? preview,
+    TResult? Function(String name)? mp4,
     TResult? Function(String name)? nanogif,
     TResult? Function(String name)? tinygif,
     TResult? Function(String name)? nanogifTransparent,
@@ -189,6 +524,8 @@ class _$MediaFilterNanoGifImpl extends _MediaFilterNanoGif {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
+    TResult Function(String name)? preview,
+    TResult Function(String name)? mp4,
     TResult Function(String name)? nanogif,
     TResult Function(String name)? tinygif,
     TResult Function(String name)? nanogifTransparent,
@@ -203,6 +540,8 @@ class _$MediaFilterNanoGifImpl extends _MediaFilterNanoGif {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
+    required TResult Function(_MediaFilterPreview value) preview,
+    required TResult Function(_MediaFilterMp4 value) mp4,
     required TResult Function(_MediaFilterNanoGif value) nanogif,
     required TResult Function(_MediaFilterTinygif value) tinygif,
     required TResult Function(_MediaFilterNanogifTransparent value)
@@ -214,6 +553,8 @@ class _$MediaFilterNanoGifImpl extends _MediaFilterNanoGif {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_MediaFilterPreview value)? preview,
+    TResult? Function(_MediaFilterMp4 value)? mp4,
     TResult? Function(_MediaFilterNanoGif value)? nanogif,
     TResult? Function(_MediaFilterTinygif value)? tinygif,
     TResult? Function(_MediaFilterNanogifTransparent value)? nanogifTransparent,
@@ -224,6 +565,8 @@ class _$MediaFilterNanoGifImpl extends _MediaFilterNanoGif {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
+    TResult Function(_MediaFilterPreview value)? preview,
+    TResult Function(_MediaFilterMp4 value)? mp4,
     TResult Function(_MediaFilterNanoGif value)? nanogif,
     TResult Function(_MediaFilterTinygif value)? tinygif,
     TResult Function(_MediaFilterNanogifTransparent value)? nanogifTransparent,
@@ -317,6 +660,8 @@ class _$MediaFilterTinygifImpl extends _MediaFilterTinygif {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
+    required TResult Function(String name) preview,
+    required TResult Function(String name) mp4,
     required TResult Function(String name) nanogif,
     required TResult Function(String name) tinygif,
     required TResult Function(String name) nanogifTransparent,
@@ -327,6 +672,8 @@ class _$MediaFilterTinygifImpl extends _MediaFilterTinygif {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(String name)? preview,
+    TResult? Function(String name)? mp4,
     TResult? Function(String name)? nanogif,
     TResult? Function(String name)? tinygif,
     TResult? Function(String name)? nanogifTransparent,
@@ -337,6 +684,8 @@ class _$MediaFilterTinygifImpl extends _MediaFilterTinygif {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
+    TResult Function(String name)? preview,
+    TResult Function(String name)? mp4,
     TResult Function(String name)? nanogif,
     TResult Function(String name)? tinygif,
     TResult Function(String name)? nanogifTransparent,
@@ -351,6 +700,8 @@ class _$MediaFilterTinygifImpl extends _MediaFilterTinygif {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
+    required TResult Function(_MediaFilterPreview value) preview,
+    required TResult Function(_MediaFilterMp4 value) mp4,
     required TResult Function(_MediaFilterNanoGif value) nanogif,
     required TResult Function(_MediaFilterTinygif value) tinygif,
     required TResult Function(_MediaFilterNanogifTransparent value)
@@ -362,6 +713,8 @@ class _$MediaFilterTinygifImpl extends _MediaFilterTinygif {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_MediaFilterPreview value)? preview,
+    TResult? Function(_MediaFilterMp4 value)? mp4,
     TResult? Function(_MediaFilterNanoGif value)? nanogif,
     TResult? Function(_MediaFilterTinygif value)? tinygif,
     TResult? Function(_MediaFilterNanogifTransparent value)? nanogifTransparent,
@@ -372,6 +725,8 @@ class _$MediaFilterTinygifImpl extends _MediaFilterTinygif {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
+    TResult Function(_MediaFilterPreview value)? preview,
+    TResult Function(_MediaFilterMp4 value)? mp4,
     TResult Function(_MediaFilterNanoGif value)? nanogif,
     TResult Function(_MediaFilterTinygif value)? tinygif,
     TResult Function(_MediaFilterNanogifTransparent value)? nanogifTransparent,
@@ -470,6 +825,8 @@ class _$MediaFilterNanogifTransparentImpl
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
+    required TResult Function(String name) preview,
+    required TResult Function(String name) mp4,
     required TResult Function(String name) nanogif,
     required TResult Function(String name) tinygif,
     required TResult Function(String name) nanogifTransparent,
@@ -480,6 +837,8 @@ class _$MediaFilterNanogifTransparentImpl
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(String name)? preview,
+    TResult? Function(String name)? mp4,
     TResult? Function(String name)? nanogif,
     TResult? Function(String name)? tinygif,
     TResult? Function(String name)? nanogifTransparent,
@@ -490,6 +849,8 @@ class _$MediaFilterNanogifTransparentImpl
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
+    TResult Function(String name)? preview,
+    TResult Function(String name)? mp4,
     TResult Function(String name)? nanogif,
     TResult Function(String name)? tinygif,
     TResult Function(String name)? nanogifTransparent,
@@ -504,6 +865,8 @@ class _$MediaFilterNanogifTransparentImpl
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
+    required TResult Function(_MediaFilterPreview value) preview,
+    required TResult Function(_MediaFilterMp4 value) mp4,
     required TResult Function(_MediaFilterNanoGif value) nanogif,
     required TResult Function(_MediaFilterTinygif value) tinygif,
     required TResult Function(_MediaFilterNanogifTransparent value)
@@ -515,6 +878,8 @@ class _$MediaFilterNanogifTransparentImpl
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_MediaFilterPreview value)? preview,
+    TResult? Function(_MediaFilterMp4 value)? mp4,
     TResult? Function(_MediaFilterNanoGif value)? nanogif,
     TResult? Function(_MediaFilterTinygif value)? tinygif,
     TResult? Function(_MediaFilterNanogifTransparent value)? nanogifTransparent,
@@ -525,6 +890,8 @@ class _$MediaFilterNanogifTransparentImpl
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
+    TResult Function(_MediaFilterPreview value)? preview,
+    TResult Function(_MediaFilterMp4 value)? mp4,
     TResult Function(_MediaFilterNanoGif value)? nanogif,
     TResult Function(_MediaFilterTinygif value)? tinygif,
     TResult Function(_MediaFilterNanogifTransparent value)? nanogifTransparent,

@@ -9,8 +9,9 @@ part 'media_formats.g.dart';
 @Freezed(toJson: false)
 class MediaFormats with _$MediaFormats {
   const factory MediaFormats({
+    required MediaFormat preview,
+    required MediaFormat mp4,
     required MediaFormat nanogif,
-    required MediaFormat tinygif,
   }) = _MediaFormats;
 
   const MediaFormats._();

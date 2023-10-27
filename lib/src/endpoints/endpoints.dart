@@ -11,6 +11,7 @@ class Endpoints {
     required String query,
     int limit = 20,
     String? next,
+    List<MediaFilter> mediaFilters = MediaFilter.values,
   }) =>
       Uri.https(
         kBaseAuthority,
@@ -19,6 +20,7 @@ class Endpoints {
           ...auth,
           'q': query,
           'limit': limit.toString(),
+          'media_filter': mediaFilters.map((e) => e.name).join(','),
           'pos': next,
         },
       );

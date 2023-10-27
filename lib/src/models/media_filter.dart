@@ -4,6 +4,14 @@ part 'media_filter.freezed.dart';
 
 @freezed
 class MediaFilter with _$MediaFilter {
+  const factory MediaFilter.preview({
+    @Default('preview') String name,
+  }) = _MediaFilterPreview;
+
+  const factory MediaFilter.mp4({
+    @Default('mp4') String name,
+  }) = _MediaFilterMp4;
+
   const factory MediaFilter.nanogif({
     @Default('nanogif') String name,
   }) = _MediaFilterNanoGif;
@@ -19,8 +27,8 @@ class MediaFilter with _$MediaFilter {
   const MediaFilter._();
 
   static const values = [
+    MediaFilter.preview(),
+    MediaFilter.mp4(),
     MediaFilter.nanogif(),
-    MediaFilter.tinygif(),
-    MediaFilter.nanogifTransparent(),
   ];
 }

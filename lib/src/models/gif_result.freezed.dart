@@ -21,7 +21,11 @@ GifResult _$GifResultFromJson(Map<String, dynamic> json) {
 /// @nodoc
 mixin _$GifResult {
   String get id => throw _privateConstructorUsedError;
-  String get itemurl => throw _privateConstructorUsedError;
+  @JsonKey(name: 'itemurl')
+  String get url => throw _privateConstructorUsedError;
+  String get title => throw _privateConstructorUsedError;
+  @JsonKey(name: 'content_description')
+  String get alt => throw _privateConstructorUsedError;
   @JsonKey(name: 'media_formats')
   MediaFormats get mediaFormats => throw _privateConstructorUsedError;
 
@@ -37,7 +41,9 @@ abstract class $GifResultCopyWith<$Res> {
   @useResult
   $Res call(
       {String id,
-      String itemurl,
+      @JsonKey(name: 'itemurl') String url,
+      String title,
+      @JsonKey(name: 'content_description') String alt,
       @JsonKey(name: 'media_formats') MediaFormats mediaFormats});
 
   $MediaFormatsCopyWith<$Res> get mediaFormats;
@@ -57,7 +63,9 @@ class _$GifResultCopyWithImpl<$Res, $Val extends GifResult>
   @override
   $Res call({
     Object? id = null,
-    Object? itemurl = null,
+    Object? url = null,
+    Object? title = null,
+    Object? alt = null,
     Object? mediaFormats = null,
   }) {
     return _then(_value.copyWith(
@@ -65,9 +73,17 @@ class _$GifResultCopyWithImpl<$Res, $Val extends GifResult>
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
               as String,
-      itemurl: null == itemurl
-          ? _value.itemurl
-          : itemurl // ignore: cast_nullable_to_non_nullable
+      url: null == url
+          ? _value.url
+          : url // ignore: cast_nullable_to_non_nullable
+              as String,
+      title: null == title
+          ? _value.title
+          : title // ignore: cast_nullable_to_non_nullable
+              as String,
+      alt: null == alt
+          ? _value.alt
+          : alt // ignore: cast_nullable_to_non_nullable
               as String,
       mediaFormats: null == mediaFormats
           ? _value.mediaFormats
@@ -95,7 +111,9 @@ abstract class _$$GifResultImplCopyWith<$Res>
   @useResult
   $Res call(
       {String id,
-      String itemurl,
+      @JsonKey(name: 'itemurl') String url,
+      String title,
+      @JsonKey(name: 'content_description') String alt,
       @JsonKey(name: 'media_formats') MediaFormats mediaFormats});
 
   @override
@@ -114,7 +132,9 @@ class __$$GifResultImplCopyWithImpl<$Res>
   @override
   $Res call({
     Object? id = null,
-    Object? itemurl = null,
+    Object? url = null,
+    Object? title = null,
+    Object? alt = null,
     Object? mediaFormats = null,
   }) {
     return _then(_$GifResultImpl(
@@ -122,9 +142,17 @@ class __$$GifResultImplCopyWithImpl<$Res>
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
               as String,
-      itemurl: null == itemurl
-          ? _value.itemurl
-          : itemurl // ignore: cast_nullable_to_non_nullable
+      url: null == url
+          ? _value.url
+          : url // ignore: cast_nullable_to_non_nullable
+              as String,
+      title: null == title
+          ? _value.title
+          : title // ignore: cast_nullable_to_non_nullable
+              as String,
+      alt: null == alt
+          ? _value.alt
+          : alt // ignore: cast_nullable_to_non_nullable
               as String,
       mediaFormats: null == mediaFormats
           ? _value.mediaFormats
@@ -139,7 +167,9 @@ class __$$GifResultImplCopyWithImpl<$Res>
 class _$GifResultImpl extends _GifResult {
   const _$GifResultImpl(
       {required this.id,
-      required this.itemurl,
+      @JsonKey(name: 'itemurl') required this.url,
+      required this.title,
+      @JsonKey(name: 'content_description') required this.alt,
       @JsonKey(name: 'media_formats') required this.mediaFormats})
       : super._();
 
@@ -149,14 +179,20 @@ class _$GifResultImpl extends _GifResult {
   @override
   final String id;
   @override
-  final String itemurl;
+  @JsonKey(name: 'itemurl')
+  final String url;
+  @override
+  final String title;
+  @override
+  @JsonKey(name: 'content_description')
+  final String alt;
   @override
   @JsonKey(name: 'media_formats')
   final MediaFormats mediaFormats;
 
   @override
   String toString() {
-    return 'GifResult(id: $id, itemurl: $itemurl, mediaFormats: $mediaFormats)';
+    return 'GifResult(id: $id, url: $url, title: $title, alt: $alt, mediaFormats: $mediaFormats)';
   }
 
   @override
@@ -165,14 +201,17 @@ class _$GifResultImpl extends _GifResult {
         (other.runtimeType == runtimeType &&
             other is _$GifResultImpl &&
             (identical(other.id, id) || other.id == id) &&
-            (identical(other.itemurl, itemurl) || other.itemurl == itemurl) &&
+            (identical(other.url, url) || other.url == url) &&
+            (identical(other.title, title) || other.title == title) &&
+            (identical(other.alt, alt) || other.alt == alt) &&
             (identical(other.mediaFormats, mediaFormats) ||
                 other.mediaFormats == mediaFormats));
   }
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(runtimeType, id, itemurl, mediaFormats);
+  int get hashCode =>
+      Object.hash(runtimeType, id, url, title, alt, mediaFormats);
 
   @JsonKey(ignore: true)
   @override
@@ -184,7 +223,9 @@ class _$GifResultImpl extends _GifResult {
 abstract class _GifResult extends GifResult {
   const factory _GifResult(
       {required final String id,
-      required final String itemurl,
+      @JsonKey(name: 'itemurl') required final String url,
+      required final String title,
+      @JsonKey(name: 'content_description') required final String alt,
       @JsonKey(name: 'media_formats')
       required final MediaFormats mediaFormats}) = _$GifResultImpl;
   const _GifResult._() : super._();
@@ -195,7 +236,13 @@ abstract class _GifResult extends GifResult {
   @override
   String get id;
   @override
-  String get itemurl;
+  @JsonKey(name: 'itemurl')
+  String get url;
+  @override
+  String get title;
+  @override
+  @JsonKey(name: 'content_description')
+  String get alt;
   @override
   @JsonKey(name: 'media_formats')
   MediaFormats get mediaFormats;

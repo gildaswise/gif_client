@@ -10,7 +10,9 @@ part 'gif_result.g.dart';
 class GifResult with _$GifResult {
   const factory GifResult({
     required String id,
-    required String itemurl,
+    @JsonKey(name: 'itemurl') required String url,
+    required String title,
+    @JsonKey(name: 'content_description') required String alt,
     @JsonKey(name: 'media_formats') required MediaFormats mediaFormats,
   }) = _GifResult;
 

@@ -9,7 +9,9 @@ part of 'gif_result.dart';
 _$GifResultImpl _$$GifResultImplFromJson(Map<String, dynamic> json) =>
     _$GifResultImpl(
       id: json['id'] as String,
-      itemurl: json['itemurl'] as String,
+      url: json['itemurl'] as String,
+      title: json['title'] as String,
+      alt: json['content_description'] as String,
       mediaFormats:
           MediaFormats.fromJson(json['media_formats'] as Map<String, dynamic>),
     );

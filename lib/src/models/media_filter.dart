@@ -24,11 +24,17 @@ class MediaFilter with _$MediaFilter {
     @Default('nanogif_transparent') String name,
   }) = _MediaFilterNanogifTransparent;
 
+  const factory MediaFilter.mediumgif({
+    @Default('mediumgif') String name,
+  }) = _MediaFilterMediumgif;
+
   const MediaFilter._();
 
   static const values = [
     MediaFilter.preview(),
     MediaFilter.mp4(),
     MediaFilter.nanogif(),
+    MediaFilter.mediumgif(),
+    MediaFilter.tinygif(),
   ];
 }

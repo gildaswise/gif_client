@@ -1,7 +1,7 @@
 // ignore_for_file: invalid_annotation_target
 
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:tenor_client/src/models/models.dart';
+import 'package:gif_client/src/models/tenor/models.dart';
 
 part 'media_formats.freezed.dart';
 part 'media_formats.g.dart';

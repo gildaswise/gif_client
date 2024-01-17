@@ -1,5 +1,5 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:tenor_client/src/models/models.dart';
+import 'package:gif_client/src/models/tenor/models.dart';
 
 part 'tenor_response.freezed.dart';
 part 'tenor_response.g.dart';

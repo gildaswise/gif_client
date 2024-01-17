@@ -1,8 +1,8 @@
-name: tenor_client
-description: Tenor client for GIFs
-version: 0.1.6
-homepage: https://github.com/deckblue/tenor_client
-repository: https://github.com/deckblue/tenor_client
+name: gif_client
+description: GIF client for Tenor and GIPHY
+version: 0.2.0
+homepage: https://github.com/gildaswise/gif_client
+repository: https://github.com/gildaswise/gif_client
 
 environment:
   sdk: ">=3.0.0 <4.0.0"

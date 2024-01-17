@@ -1,12 +1,19 @@
 import 'dart:async';
 import 'dart:convert';
+import 'dart:developer';
 
 import 'package:gif_client/src/models/giphy/models.dart';
 import 'package:http/http.dart';
 
+const _kLogName = 'GiphyClient';
+const kDefaultLimit = 20;
+
 class GiphyClient {
-  GiphyClient({required String apiKey, required String randomId})
-      : _apiKey = apiKey,
+  GiphyClient({
+    required String apiKey,
+    required String randomId,
+    this.lang = GiphyLanguage.english,
+  })  : _apiKey = apiKey,
         _randomId = randomId;
 
   static final baseUri = Uri(scheme: 'https', host: 'api.giphy.com');
@@ -15,105 +22,116 @@ class GiphyClient {
   final Client _client = Client();
   final String _randomId;
   final String _apiVersion = 'v1';
+  final String lang;
 
-  Future<GiphyCollection> trending({
+  Future<GiphyCollection?> trending({
     int offset = 0,
-    int limit = 30,
+    int limit = kDefaultLimit,
     String rating = GiphyRating.g,
-    String lang = GiphyLanguage.english,
     String type = GiphyType.gifs,
-  }) async {
-    return _fetchCollection(
-      baseUri.replace(
-        path: '$_apiVersion/$type/trending',
-        queryParameters: <String, String>{
-          'offset': '$offset',
-          'limit': '$limit',
-          'rating': rating,
-          'lang': lang,
-        },
-      ),
-    );
-  }
+    String? lang,
+  }) async =>
+      await _fetchCollection(
+        baseUri.replace(
+          path: '$_apiVersion/$type/trending',
+          queryParameters: <String, String>{
+            'offset': '$offset',
+            'limit': '$limit',
+            'rating': rating,
+            'lang': lang ?? this.lang,
+          },
+        ),
+      );
 
-  Future<GiphyCollection> search(
+  Future<GiphyCollection?> search(
     String query, {
     int offset = 0,
-    int limit = 30,
+    int limit = kDefaultLimit,
     String rating = GiphyRating.g,
-    String lang = GiphyLanguage.english,
+    String? lang,
     String type = GiphyType.gifs,
-  }) async {
-    return _fetchCollection(
-      baseUri.replace(
-        path: '$_apiVersion/$type/search',
-        queryParameters: <String, String>{
-          'q': query,
-          'offset': '$offset',
-          'limit': '$limit',
-          'rating': rating,
-          'lang': lang,
-        },
-      ),
-    );
-  }
+  }) async =>
+      await _fetchCollection(
+        baseUri.replace(
+          path: '$_apiVersion/$type/search',
+          queryParameters: <String, String>{
+            'q': query,
+            'offset': '$offset',
+            'limit': '$limit',
+            'rating': rating,
+            'lang': lang ?? this.lang,
+          },
+        ),
+      );
 
-  Future<GiphyCollection> emojis({
+  Future<GiphyCollection?> emojis({
     int offset = 0,
-    int limit = 30,
+    int limit = kDefaultLimit,
     String rating = GiphyRating.g,
-    String lang = GiphyLanguage.english,
-  }) async {
-    return _fetchCollection(
-      baseUri.replace(
-        path: '$_apiVersion/${GiphyType.emoji}',
-        queryParameters: <String, String>{
-          'offset': '$offset',
-          'limit': '$limit',
-          'rating': rating,
-          'lang': lang,
-        },
-      ),
-    );
-  }
+    String? lang,
+  }) async =>
+      await _fetchCollection(
+        baseUri.replace(
+          path: '$_apiVersion/${GiphyType.emoji}',
+          queryParameters: <String, String>{
+            'offset': '$offset',
+            'limit': '$limit',
+            'rating': rating,
+            'lang': lang ?? this.lang,
+          },
+        ),
+      );
 
-  Future<GiphyGif> random({
+  Future<GiphyGif?> random({
     required String tag,
     String rating = GiphyRating.g,
     String type = GiphyType.gifs,
-  }) async {
-    return _fetchGif(
-      baseUri.replace(
-        path: '$_apiVersion/$type/random',
-        queryParameters: <String, String>{
-          'tag': tag,
-          'rating': rating,
-        },
-      ),
-    );
-  }
+  }) async =>
+      await _fetchGif(
+        baseUri.replace(
+          path: '$_apiVersion/$type/random',
+          queryParameters: <String, String>{
+            'tag': tag,
+            'rating': rating,
+          },
+        ),
+      );
 
-  Future<GiphyGif> byId(String id) async =>
-      _fetchGif(baseUri.replace(path: 'v1/gifs/$id'));
+  Future<GiphyGif?> byId(String id) async =>
+      await _fetchGif(baseUri.replace(path: 'v1/gifs/$id'));
 
   Future<String> getRandomId() async =>
       _getRandomId(baseUri.replace(path: 'v1/randomid'));
 
-  Future<GiphyGif> _fetchGif(Uri uri) async {
-    final response = await _getWithAuthorization(uri);
-
-    return GiphyGif.fromJson(
-      (json.decode(response.body) as Map<String, dynamic>)['data']
-          as Map<String, dynamic>,
-    );
+  Future<GiphyGif?> _fetchGif(Uri uri) async {
+    try {
+      final response = await _getWithAuthorization(uri);
+      return GiphyGif.fromJson(
+        (json.decode(response.body) as Map<String, dynamic>)['data']
+            as Map<String, dynamic>,
+      );
+    } catch (e, s) {
+      log('Could not get gif by id: ${uri.path}',
+          error: e, stackTrace: s, name: _kLogName);
+      return null;
+    }
   }
 
-  Future<GiphyCollection> _fetchCollection(Uri uri) async {
-    final response = await _getWithAuthorization(uri);
-
-    return GiphyCollection.fromJson(
-      json.decode(response.body) as Map<String, dynamic>,
-    );
+  Future<GiphyCollection?> _fetchCollection(Uri uri) async {
+    try {
+      final response = await _getWithAuthorization(uri);
+      return GiphyCollection.fromJson(
+        json.decode(response.body) as Map<String, dynamic>,
+      );
+    } catch (e, s) {
+      log(
+        'Could not get collection: ${uri.path}',
+        error: e,
+        stackTrace: s,
+        name: _kLogName,
+      );
+      return null;
+    }
   }
 
   Future<String> _getRandomId(Uri uri) async {

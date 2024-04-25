@@ -25,6 +25,7 @@ mixin _$MediaFilter {
     required TResult Function(String name) tinygif,
     required TResult Function(String name) nanogifTransparent,
     required TResult Function(String name) mediumgif,
+    required TResult Function(String name) gif,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -35,6 +36,7 @@ mixin _$MediaFilter {
     TResult? Function(String name)? tinygif,
     TResult? Function(String name)? nanogifTransparent,
     TResult? Function(String name)? mediumgif,
+    TResult? Function(String name)? gif,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -45,6 +47,7 @@ mixin _$MediaFilter {
     TResult Function(String name)? tinygif,
     TResult Function(String name)? nanogifTransparent,
     TResult Function(String name)? mediumgif,
+    TResult Function(String name)? gif,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -57,6 +60,7 @@ mixin _$MediaFilter {
     required TResult Function(_MediaFilterNanogifTransparent value)
         nanogifTransparent,
     required TResult Function(_MediaFilterMediumgif value) mediumgif,
+    required TResult Function(_MediaFilterGif value) gif,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -67,6 +71,7 @@ mixin _$MediaFilter {
     TResult? Function(_MediaFilterTinygif value)? tinygif,
     TResult? Function(_MediaFilterNanogifTransparent value)? nanogifTransparent,
     TResult? Function(_MediaFilterMediumgif value)? mediumgif,
+    TResult? Function(_MediaFilterGif value)? gif,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -77,6 +82,7 @@ mixin _$MediaFilter {
     TResult Function(_MediaFilterTinygif value)? tinygif,
     TResult Function(_MediaFilterNanogifTransparent value)? nanogifTransparent,
     TResult Function(_MediaFilterMediumgif value)? mediumgif,
+    TResult Function(_MediaFilterGif value)? gif,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -193,6 +199,7 @@ class _$MediaFilterPreviewImpl extends _MediaFilterPreview {
     required TResult Function(String name) tinygif,
     required TResult Function(String name) nanogifTransparent,
     required TResult Function(String name) mediumgif,
+    required TResult Function(String name) gif,
   }) {
     return preview(name);
   }
@@ -206,6 +213,7 @@ class _$MediaFilterPreviewImpl extends _MediaFilterPreview {
     TResult? Function(String name)? tinygif,
     TResult? Function(String name)? nanogifTransparent,
     TResult? Function(String name)? mediumgif,
+    TResult? Function(String name)? gif,
   }) {
     return preview?.call(name);
   }
@@ -219,6 +227,7 @@ class _$MediaFilterPreviewImpl extends _MediaFilterPreview {
     TResult Function(String name)? tinygif,
     TResult Function(String name)? nanogifTransparent,
     TResult Function(String name)? mediumgif,
+    TResult Function(String name)? gif,
     required TResult orElse(),
   }) {
     if (preview != null) {
@@ -237,6 +246,7 @@ class _$MediaFilterPreviewImpl extends _MediaFilterPreview {
     required TResult Function(_MediaFilterNanogifTransparent value)
         nanogifTransparent,
     required TResult Function(_MediaFilterMediumgif value) mediumgif,
+    required TResult Function(_MediaFilterGif value) gif,
   }) {
     return preview(this);
   }
@@ -250,6 +260,7 @@ class _$MediaFilterPreviewImpl extends _MediaFilterPreview {
     TResult? Function(_MediaFilterTinygif value)? tinygif,
     TResult? Function(_MediaFilterNanogifTransparent value)? nanogifTransparent,
     TResult? Function(_MediaFilterMediumgif value)? mediumgif,
+    TResult? Function(_MediaFilterGif value)? gif,
   }) {
     return preview?.call(this);
   }
@@ -263,6 +274,7 @@ class _$MediaFilterPreviewImpl extends _MediaFilterPreview {
     TResult Function(_MediaFilterTinygif value)? tinygif,
     TResult Function(_MediaFilterNanogifTransparent value)? nanogifTransparent,
     TResult Function(_MediaFilterMediumgif value)? mediumgif,
+    TResult Function(_MediaFilterGif value)? gif,
     required TResult orElse(),
   }) {
     if (preview != null) {
@@ -359,6 +371,7 @@ class _$MediaFilterMp4Impl extends _MediaFilterMp4 {
     required TResult Function(String name) tinygif,
     required TResult Function(String name) nanogifTransparent,
     required TResult Function(String name) mediumgif,
+    required TResult Function(String name) gif,
   }) {
     return mp4(name);
   }
@@ -372,6 +385,7 @@ class _$MediaFilterMp4Impl extends _MediaFilterMp4 {
     TResult? Function(String name)? tinygif,
     TResult? Function(String name)? nanogifTransparent,
     TResult? Function(String name)? mediumgif,
+    TResult? Function(String name)? gif,
   }) {
     return mp4?.call(name);
   }
@@ -385,6 +399,7 @@ class _$MediaFilterMp4Impl extends _MediaFilterMp4 {
     TResult Function(String name)? tinygif,
     TResult Function(String name)? nanogifTransparent,
     TResult Function(String name)? mediumgif,
+    TResult Function(String name)? gif,
     required TResult orElse(),
   }) {
     if (mp4 != null) {
@@ -403,6 +418,7 @@ class _$MediaFilterMp4Impl extends _MediaFilterMp4 {
     required TResult Function(_MediaFilterNanogifTransparent value)
         nanogifTransparent,
     required TResult Function(_MediaFilterMediumgif value) mediumgif,
+    required TResult Function(_MediaFilterGif value) gif,
   }) {
     return mp4(this);
   }
@@ -416,6 +432,7 @@ class _$MediaFilterMp4Impl extends _MediaFilterMp4 {
     TResult? Function(_MediaFilterTinygif value)? tinygif,
     TResult? Function(_MediaFilterNanogifTransparent value)? nanogifTransparent,
     TResult? Function(_MediaFilterMediumgif value)? mediumgif,
+    TResult? Function(_MediaFilterGif value)? gif,
   }) {
     return mp4?.call(this);
   }
@@ -429,6 +446,7 @@ class _$MediaFilterMp4Impl extends _MediaFilterMp4 {
     TResult Function(_MediaFilterTinygif value)? tinygif,
     TResult Function(_MediaFilterNanogifTransparent value)? nanogifTransparent,
     TResult Function(_MediaFilterMediumgif value)? mediumgif,
+    TResult Function(_MediaFilterGif value)? gif,
     required TResult orElse(),
   }) {
     if (mp4 != null) {
@@ -524,6 +542,7 @@ class _$MediaFilterNanoGifImpl extends _MediaFilterNanoGif {
     required TResult Function(String name) tinygif,
     required TResult Function(String name) nanogifTransparent,
     required TResult Function(String name) mediumgif,
+    required TResult Function(String name) gif,
   }) {
     return nanogif(name);
   }
@@ -537,6 +556,7 @@ class _$MediaFilterNanoGifImpl extends _MediaFilterNanoGif {
     TResult? Function(String name)? tinygif,
     TResult? Function(String name)? nanogifTransparent,
     TResult? Function(String name)? mediumgif,
+    TResult? Function(String name)? gif,
   }) {
     return nanogif?.call(name);
   }
@@ -550,6 +570,7 @@ class _$MediaFilterNanoGifImpl extends _MediaFilterNanoGif {
     TResult Function(String name)? tinygif,
     TResult Function(String name)? nanogifTransparent,
     TResult Function(String name)? mediumgif,
+    TResult Function(String name)? gif,
     required TResult orElse(),
   }) {
     if (nanogif != null) {
@@ -568,6 +589,7 @@ class _$MediaFilterNanoGifImpl extends _MediaFilterNanoGif {
     required TResult Function(_MediaFilterNanogifTransparent value)
         nanogifTransparent,
     required TResult Function(_MediaFilterMediumgif value) mediumgif,
+    required TResult Function(_MediaFilterGif value) gif,
   }) {
     return nanogif(this);
   }
@@ -581,6 +603,7 @@ class _$MediaFilterNanoGifImpl extends _MediaFilterNanoGif {
     TResult? Function(_MediaFilterTinygif value)? tinygif,
     TResult? Function(_MediaFilterNanogifTransparent value)? nanogifTransparent,
     TResult? Function(_MediaFilterMediumgif value)? mediumgif,
+    TResult? Function(_MediaFilterGif value)? gif,
   }) {
     return nanogif?.call(this);
   }
@@ -594,6 +617,7 @@ class _$MediaFilterNanoGifImpl extends _MediaFilterNanoGif {
     TResult Function(_MediaFilterTinygif value)? tinygif,
     TResult Function(_MediaFilterNanogifTransparent value)? nanogifTransparent,
     TResult Function(_MediaFilterMediumgif value)? mediumgif,
+    TResult Function(_MediaFilterGif value)? gif,
     required TResult orElse(),
   }) {
     if (nanogif != null) {
@@ -690,6 +714,7 @@ class _$MediaFilterTinygifImpl extends _MediaFilterTinygif {
     required TResult Function(String name) tinygif,
     required TResult Function(String name) nanogifTransparent,
     required TResult Function(String name) mediumgif,
+    required TResult Function(String name) gif,
   }) {
     return tinygif(name);
   }
@@ -703,6 +728,7 @@ class _$MediaFilterTinygifImpl extends _MediaFilterTinygif {
     TResult? Function(String name)? tinygif,
     TResult? Function(String name)? nanogifTransparent,
     TResult? Function(String name)? mediumgif,
+    TResult? Function(String name)? gif,
   }) {
     return tinygif?.call(name);
   }
@@ -716,6 +742,7 @@ class _$MediaFilterTinygifImpl extends _MediaFilterTinygif {
     TResult Function(String name)? tinygif,
     TResult Function(String name)? nanogifTransparent,
     TResult Function(String name)? mediumgif,
+    TResult Function(String name)? gif,
     required TResult orElse(),
   }) {
     if (tinygif != null) {
@@ -734,6 +761,7 @@ class _$MediaFilterTinygifImpl extends _MediaFilterTinygif {
     required TResult Function(_MediaFilterNanogifTransparent value)
         nanogifTransparent,
     required TResult Function(_MediaFilterMediumgif value) mediumgif,
+    required TResult Function(_MediaFilterGif value) gif,
   }) {
     return tinygif(this);
   }
@@ -747,6 +775,7 @@ class _$MediaFilterTinygifImpl extends _MediaFilterTinygif {
     TResult? Function(_MediaFilterTinygif value)? tinygif,
     TResult? Function(_MediaFilterNanogifTransparent value)? nanogifTransparent,
     TResult? Function(_MediaFilterMediumgif value)? mediumgif,
+    TResult? Function(_MediaFilterGif value)? gif,
   }) {
     return tinygif?.call(this);
   }
@@ -760,6 +789,7 @@ class _$MediaFilterTinygifImpl extends _MediaFilterTinygif {
     TResult Function(_MediaFilterTinygif value)? tinygif,
     TResult Function(_MediaFilterNanogifTransparent value)? nanogifTransparent,
     TResult Function(_MediaFilterMediumgif value)? mediumgif,
+    TResult Function(_MediaFilterGif value)? gif,
     required TResult orElse(),
   }) {
     if (tinygif != null) {
@@ -861,6 +891,7 @@ class _$MediaFilterNanogifTransparentImpl
     required TResult Function(String name) tinygif,
     required TResult Function(String name) nanogifTransparent,
     required TResult Function(String name) mediumgif,
+    required TResult Function(String name) gif,
   }) {
     return nanogifTransparent(name);
   }
@@ -874,6 +905,7 @@ class _$MediaFilterNanogifTransparentImpl
     TResult? Function(String name)? tinygif,
     TResult? Function(String name)? nanogifTransparent,
     TResult? Function(String name)? mediumgif,
+    TResult? Function(String name)? gif,
   }) {
     return nanogifTransparent?.call(name);
   }
@@ -887,6 +919,7 @@ class _$MediaFilterNanogifTransparentImpl
     TResult Function(String name)? tinygif,
     TResult Function(String name)? nanogifTransparent,
     TResult Function(String name)? mediumgif,
+    TResult Function(String name)? gif,
     required TResult orElse(),
   }) {
     if (nanogifTransparent != null) {
@@ -905,6 +938,7 @@ class _$MediaFilterNanogifTransparentImpl
     required TResult Function(_MediaFilterNanogifTransparent value)
         nanogifTransparent,
     required TResult Function(_MediaFilterMediumgif value) mediumgif,
+    required TResult Function(_MediaFilterGif value) gif,
   }) {
     return nanogifTransparent(this);
   }
@@ -918,6 +952,7 @@ class _$MediaFilterNanogifTransparentImpl
     TResult? Function(_MediaFilterTinygif value)? tinygif,
     TResult? Function(_MediaFilterNanogifTransparent value)? nanogifTransparent,
     TResult? Function(_MediaFilterMediumgif value)? mediumgif,
+    TResult? Function(_MediaFilterGif value)? gif,
   }) {
     return nanogifTransparent?.call(this);
   }
@@ -931,6 +966,7 @@ class _$MediaFilterNanogifTransparentImpl
     TResult Function(_MediaFilterTinygif value)? tinygif,
     TResult Function(_MediaFilterNanogifTransparent value)? nanogifTransparent,
     TResult Function(_MediaFilterMediumgif value)? mediumgif,
+    TResult Function(_MediaFilterGif value)? gif,
     required TResult orElse(),
   }) {
     if (nanogifTransparent != null) {
@@ -1029,6 +1065,7 @@ class _$MediaFilterMediumgifImpl extends _MediaFilterMediumgif {
     required TResult Function(String name) tinygif,
     required TResult Function(String name) nanogifTransparent,
     required TResult Function(String name) mediumgif,
+    required TResult Function(String name) gif,
   }) {
     return mediumgif(name);
   }
@@ -1042,6 +1079,7 @@ class _$MediaFilterMediumgifImpl extends _MediaFilterMediumgif {
     TResult? Function(String name)? tinygif,
     TResult? Function(String name)? nanogifTransparent,
     TResult? Function(String name)? mediumgif,
+    TResult? Function(String name)? gif,
   }) {
     return mediumgif?.call(name);
   }
@@ -1055,6 +1093,7 @@ class _$MediaFilterMediumgifImpl extends _MediaFilterMediumgif {
     TResult Function(String name)? tinygif,
     TResult Function(String name)? nanogifTransparent,
     TResult Function(String name)? mediumgif,
+    TResult Function(String name)? gif,
     required TResult orElse(),
   }) {
     if (mediumgif != null) {
@@ -1073,6 +1112,7 @@ class _$MediaFilterMediumgifImpl extends _MediaFilterMediumgif {
     required TResult Function(_MediaFilterNanogifTransparent value)
         nanogifTransparent,
     required TResult Function(_MediaFilterMediumgif value) mediumgif,
+    required TResult Function(_MediaFilterGif value) gif,
   }) {
     return mediumgif(this);
   }
@@ -1086,6 +1126,7 @@ class _$MediaFilterMediumgifImpl extends _MediaFilterMediumgif {
     TResult? Function(_MediaFilterTinygif value)? tinygif,
     TResult? Function(_MediaFilterNanogifTransparent value)? nanogifTransparent,
     TResult? Function(_MediaFilterMediumgif value)? mediumgif,
+    TResult? Function(_MediaFilterGif value)? gif,
   }) {
     return mediumgif?.call(this);
   }
@@ -1099,6 +1140,7 @@ class _$MediaFilterMediumgifImpl extends _MediaFilterMediumgif {
     TResult Function(_MediaFilterTinygif value)? tinygif,
     TResult Function(_MediaFilterNanogifTransparent value)? nanogifTransparent,
     TResult Function(_MediaFilterMediumgif value)? mediumgif,
+    TResult Function(_MediaFilterGif value)? gif,
     required TResult orElse(),
   }) {
     if (mediumgif != null) {
@@ -1119,4 +1161,175 @@ abstract class _MediaFilterMediumgif extends MediaFilter {
   @JsonKey(ignore: true)
   _$$MediaFilterMediumgifImplCopyWith<_$MediaFilterMediumgifImpl>
       get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$MediaFilterGifImplCopyWith<$Res>
+    implements $MediaFilterCopyWith<$Res> {
+  factory _$$MediaFilterGifImplCopyWith(_$MediaFilterGifImpl value,
+          $Res Function(_$MediaFilterGifImpl) then) =
+      __$$MediaFilterGifImplCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call({String name});
+}
+
+/// @nodoc
+class __$$MediaFilterGifImplCopyWithImpl<$Res>
+    extends _$MediaFilterCopyWithImpl<$Res, _$MediaFilterGifImpl>
+    implements _$$MediaFilterGifImplCopyWith<$Res> {
+  __$$MediaFilterGifImplCopyWithImpl(
+      _$MediaFilterGifImpl _value, $Res Function(_$MediaFilterGifImpl) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? name = null,
+  }) {
+    return _then(_$MediaFilterGifImpl(
+      name: null == name
+          ? _value.name
+          : name // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$MediaFilterGifImpl extends _MediaFilterGif {
+  const _$MediaFilterGifImpl({this.name = 'gif'}) : super._();
+
+  @override
+  @JsonKey()
+  final String name;
+
+  @override
+  String toString() {
+    return 'MediaFilter.gif(name: $name)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$MediaFilterGifImpl &&
+            (identical(other.name, name) || other.name == name));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, name);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$MediaFilterGifImplCopyWith<_$MediaFilterGifImpl> get copyWith =>
+      __$$MediaFilterGifImplCopyWithImpl<_$MediaFilterGifImpl>(
+          this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(String name) preview,
+    required TResult Function(String name) mp4,
+    required TResult Function(String name) nanogif,
+    required TResult Function(String name) tinygif,
+    required TResult Function(String name) nanogifTransparent,
+    required TResult Function(String name) mediumgif,
+    required TResult Function(String name) gif,
+  }) {
+    return gif(name);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(String name)? preview,
+    TResult? Function(String name)? mp4,
+    TResult? Function(String name)? nanogif,
+    TResult? Function(String name)? tinygif,
+    TResult? Function(String name)? nanogifTransparent,
+    TResult? Function(String name)? mediumgif,
+    TResult? Function(String name)? gif,
+  }) {
+    return gif?.call(name);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(String name)? preview,
+    TResult Function(String name)? mp4,
+    TResult Function(String name)? nanogif,
+    TResult Function(String name)? tinygif,
+    TResult Function(String name)? nanogifTransparent,
+    TResult Function(String name)? mediumgif,
+    TResult Function(String name)? gif,
+    required TResult orElse(),
+  }) {
+    if (gif != null) {
+      return gif(name);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_MediaFilterPreview value) preview,
+    required TResult Function(_MediaFilterMp4 value) mp4,
+    required TResult Function(_MediaFilterNanoGif value) nanogif,
+    required TResult Function(_MediaFilterTinygif value) tinygif,
+    required TResult Function(_MediaFilterNanogifTransparent value)
+        nanogifTransparent,
+    required TResult Function(_MediaFilterMediumgif value) mediumgif,
+    required TResult Function(_MediaFilterGif value) gif,
+  }) {
+    return gif(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_MediaFilterPreview value)? preview,
+    TResult? Function(_MediaFilterMp4 value)? mp4,
+    TResult? Function(_MediaFilterNanoGif value)? nanogif,
+    TResult? Function(_MediaFilterTinygif value)? tinygif,
+    TResult? Function(_MediaFilterNanogifTransparent value)? nanogifTransparent,
+    TResult? Function(_MediaFilterMediumgif value)? mediumgif,
+    TResult? Function(_MediaFilterGif value)? gif,
+  }) {
+    return gif?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_MediaFilterPreview value)? preview,
+    TResult Function(_MediaFilterMp4 value)? mp4,
+    TResult Function(_MediaFilterNanoGif value)? nanogif,
+    TResult Function(_MediaFilterTinygif value)? tinygif,
+    TResult Function(_MediaFilterNanogifTransparent value)? nanogifTransparent,
+    TResult Function(_MediaFilterMediumgif value)? mediumgif,
+    TResult Function(_MediaFilterGif value)? gif,
+    required TResult orElse(),
+  }) {
+    if (gif != null) {
+      return gif(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _MediaFilterGif extends MediaFilter {
+  const factory _MediaFilterGif({final String name}) = _$MediaFilterGifImpl;
+  const _MediaFilterGif._() : super._();
+
+  @override
+  String get name;
+  @override
+  @JsonKey(ignore: true)
+  _$$MediaFilterGifImplCopyWith<_$MediaFilterGifImpl> get copyWith =>
+      throw _privateConstructorUsedError;
 }

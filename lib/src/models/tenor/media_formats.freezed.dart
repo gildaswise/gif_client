@@ -25,6 +25,7 @@ mixin _$MediaFormats {
   MediaFormat get nanogif => throw _privateConstructorUsedError;
   MediaFormat get tinygif => throw _privateConstructorUsedError;
   MediaFormat get mediumgif => throw _privateConstructorUsedError;
+  MediaFormat get gif => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
   $MediaFormatsCopyWith<MediaFormats> get copyWith =>
@@ -42,13 +43,15 @@ abstract class $MediaFormatsCopyWith<$Res> {
       MediaFormat mp4,
       MediaFormat nanogif,
       MediaFormat tinygif,
-      MediaFormat mediumgif});
+      MediaFormat mediumgif,
+      MediaFormat gif});
 
   $MediaFormatCopyWith<$Res> get preview;
   $MediaFormatCopyWith<$Res> get mp4;
   $MediaFormatCopyWith<$Res> get nanogif;
   $MediaFormatCopyWith<$Res> get tinygif;
   $MediaFormatCopyWith<$Res> get mediumgif;
+  $MediaFormatCopyWith<$Res> get gif;
 }
 
 /// @nodoc
@@ -69,6 +72,7 @@ class _$MediaFormatsCopyWithImpl<$Res, $Val extends MediaFormats>
     Object? nanogif = null,
     Object? tinygif = null,
     Object? mediumgif = null,
+    Object? gif = null,
   }) {
     return _then(_value.copyWith(
       preview: null == preview
@@ -90,6 +94,10 @@ class _$MediaFormatsCopyWithImpl<$Res, $Val extends MediaFormats>
       mediumgif: null == mediumgif
           ? _value.mediumgif
           : mediumgif // ignore: cast_nullable_to_non_nullable
+              as MediaFormat,
+      gif: null == gif
+          ? _value.gif
+          : gif // ignore: cast_nullable_to_non_nullable
               as MediaFormat,
     ) as $Val);
   }
@@ -133,6 +141,14 @@ class _$MediaFormatsCopyWithImpl<$Res, $Val extends MediaFormats>
       return _then(_value.copyWith(mediumgif: value) as $Val);
     });
   }
+
+  @override
+  @pragma('vm:prefer-inline')
+  $MediaFormatCopyWith<$Res> get gif {
+    return $MediaFormatCopyWith<$Res>(_value.gif, (value) {
+      return _then(_value.copyWith(gif: value) as $Val);
+    });
+  }
 }
 
 /// @nodoc
@@ -148,7 +164,8 @@ abstract class _$$MediaFormatsImplCopyWith<$Res>
       MediaFormat mp4,
       MediaFormat nanogif,
       MediaFormat tinygif,
-      MediaFormat mediumgif});
+      MediaFormat mediumgif,
+      MediaFormat gif});
 
   @override
   $MediaFormatCopyWith<$Res> get preview;
@@ -160,6 +177,8 @@ abstract class _$$MediaFormatsImplCopyWith<$Res>
   $MediaFormatCopyWith<$Res> get tinygif;
   @override
   $MediaFormatCopyWith<$Res> get mediumgif;
+  @override
+  $MediaFormatCopyWith<$Res> get gif;
 }
 
 /// @nodoc
@@ -178,6 +197,7 @@ class __$$MediaFormatsImplCopyWithImpl<$Res>
     Object? nanogif = null,
     Object? tinygif = null,
     Object? mediumgif = null,
+    Object? gif = null,
   }) {
     return _then(_$MediaFormatsImpl(
       preview: null == preview
@@ -200,6 +220,10 @@ class __$$MediaFormatsImplCopyWithImpl<$Res>
           ? _value.mediumgif
           : mediumgif // ignore: cast_nullable_to_non_nullable
               as MediaFormat,
+      gif: null == gif
+          ? _value.gif
+          : gif // ignore: cast_nullable_to_non_nullable
+              as MediaFormat,
     ));
   }
 }
@@ -212,7 +236,8 @@ class _$MediaFormatsImpl extends _MediaFormats {
       required this.mp4,
       required this.nanogif,
       required this.tinygif,
-      required this.mediumgif})
+      required this.mediumgif,
+      required this.gif})
       : super._();
 
   factory _$MediaFormatsImpl.fromJson(Map<String, dynamic> json) =>
@@ -228,10 +253,12 @@ class _$MediaFormatsImpl extends _MediaFormats {
   final MediaFormat tinygif;
   @override
   final MediaFormat mediumgif;
+  @override
+  final MediaFormat gif;
 
   @override
   String toString() {
-    return 'MediaFormats(preview: $preview, mp4: $mp4, nanogif: $nanogif, tinygif: $tinygif, mediumgif: $mediumgif)';
+    return 'MediaFormats(preview: $preview, mp4: $mp4, nanogif: $nanogif, tinygif: $tinygif, mediumgif: $mediumgif, gif: $gif)';
   }
 
   @override
@@ -244,13 +271,14 @@ class _$MediaFormatsImpl extends _MediaFormats {
             (identical(other.nanogif, nanogif) || other.nanogif == nanogif) &&
             (identical(other.tinygif, tinygif) || other.tinygif == tinygif) &&
             (identical(other.mediumgif, mediumgif) ||
-                other.mediumgif == mediumgif));
+                other.mediumgif == mediumgif) &&
+            (identical(other.gif, gif) || other.gif == gif));
   }
 
   @JsonKey(ignore: true)
   @override
   int get hashCode =>
-      Object.hash(runtimeType, preview, mp4, nanogif, tinygif, mediumgif);
+      Object.hash(runtimeType, preview, mp4, nanogif, tinygif, mediumgif, gif);
 
   @JsonKey(ignore: true)
   @override
@@ -265,7 +293,8 @@ abstract class _MediaFormats extends MediaFormats {
       required final MediaFormat mp4,
       required final MediaFormat nanogif,
       required final MediaFormat tinygif,
-      required final MediaFormat mediumgif}) = _$MediaFormatsImpl;
+      required final MediaFormat mediumgif,
+      required final MediaFormat gif}) = _$MediaFormatsImpl;
   const _MediaFormats._() : super._();
 
   factory _MediaFormats.fromJson(Map<String, dynamic> json) =
@@ -281,6 +310,8 @@ abstract class _MediaFormats extends MediaFormats {
   MediaFormat get tinygif;
   @override
   MediaFormat get mediumgif;
+  @override
+  MediaFormat get gif;
   @override
   @JsonKey(ignore: true)
   _$$MediaFormatsImplCopyWith<_$MediaFormatsImpl> get copyWith =>

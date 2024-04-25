@@ -14,4 +14,5 @@ _$MediaFormatsImpl _$$MediaFormatsImplFromJson(Map<String, dynamic> json) =>
       tinygif: MediaFormat.fromJson(json['tinygif'] as Map<String, dynamic>),
       mediumgif:
           MediaFormat.fromJson(json['mediumgif'] as Map<String, dynamic>),
+      gif: MediaFormat.fromJson(json['gif'] as Map<String, dynamic>),
     );

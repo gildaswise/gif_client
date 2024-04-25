@@ -28,6 +28,10 @@ class MediaFilter with _$MediaFilter {
     @Default('mediumgif') String name,
   }) = _MediaFilterMediumgif;
 
+  const factory MediaFilter.gif({
+    @Default('gif') String name,
+  }) = _MediaFilterGif;
+
   const MediaFilter._();
 
   static const values = [
@@ -36,5 +40,6 @@ class MediaFilter with _$MediaFilter {
     MediaFilter.nanogif(),
     MediaFilter.mediumgif(),
     MediaFilter.tinygif(),
+    MediaFilter.gif(),
   ];
 }

@@ -14,6 +14,7 @@ class MediaFormats with _$MediaFormats {
     required MediaFormat nanogif,
     required MediaFormat tinygif,
     required MediaFormat mediumgif,
+    required MediaFormat gif,
   }) = _MediaFormats;
 
   const MediaFormats._();

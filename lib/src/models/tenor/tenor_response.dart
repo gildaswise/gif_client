@@ -1,18 +1,18 @@
-import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:gif_client/src/models/tenor/models.dart';
+import 'package:gif_client/gif_client.dart';
 
-part 'tenor_response.freezed.dart';
-part 'tenor_response.g.dart';
+class TenorResponse {
+  const TenorResponse({
+    required this.results,
+    required this.next,
+  });
 
-@Freezed(toJson: false)
-class TenorResponse with _$TenorResponse {
-  const factory TenorResponse({
-    required List<GifResult> results,
-    required String next,
-  }) = _Response;
+  final List<GifResult> results;
+  final String next;
 
-  const TenorResponse._();
-
-  factory TenorResponse.fromJson(Map<String, dynamic> json) =>
-      _$TenorResponseFromJson(json);
+  factory TenorResponse.fromJson(Map<String, dynamic> json) => TenorResponse(
+        results: (json['results'] as List<dynamic>)
+            .map((e) => GifResult.fromJson(e as Map<String, dynamic>))
+            .toList(),
+        next: json['next'] as String,
+      );
 }

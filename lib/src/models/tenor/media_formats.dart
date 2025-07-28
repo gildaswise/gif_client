@@ -1,24 +1,29 @@
-// ignore_for_file: invalid_annotation_target
-
-import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:gif_client/src/models/tenor/models.dart';
 
-part 'media_formats.freezed.dart';
-part 'media_formats.g.dart';
+class MediaFormats {
+  const MediaFormats({
+    required this.preview,
+    required this.mp4,
+    required this.nanogif,
+    required this.tinygif,
+    required this.mediumgif,
+    required this.gif,
+  });
 
-@Freezed(toJson: false)
-class MediaFormats with _$MediaFormats {
-  const factory MediaFormats({
-    required MediaFormat preview,
-    required MediaFormat mp4,
-    required MediaFormat nanogif,
-    required MediaFormat tinygif,
-    required MediaFormat mediumgif,
-    required MediaFormat gif,
-  }) = _MediaFormats;
+ final MediaFormat preview;
+ final MediaFormat mp4;
+ final MediaFormat nanogif;
+ final MediaFormat tinygif;
+ final MediaFormat mediumgif;
+ final MediaFormat gif;
 
-  const MediaFormats._();
-
-  factory MediaFormats.fromJson(Map<String, dynamic> json) =>
-      _$MediaFormatsFromJson(json);
+  factory MediaFormats.fromJson(Map<String, dynamic> json) => MediaFormats(
+    preview: MediaFormat.fromJson(json['preview'] as Map<String, dynamic>),
+    mp4: MediaFormat.fromJson(json['mp4'] as Map<String, dynamic>),
+    nanogif: MediaFormat.fromJson(json['nanogif'] as Map<String, dynamic>),
+    tinygif: MediaFormat.fromJson(json['tinygif'] as Map<String, dynamic>),
+    mediumgif:
+    MediaFormat.fromJson(json['mediumgif'] as Map<String, dynamic>),
+    gif: MediaFormat.fromJson(json['gif'] as Map<String, dynamic>),
+  );
 }

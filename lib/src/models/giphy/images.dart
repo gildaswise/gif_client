@@ -1,7 +1,5 @@
-import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:gif_client/src/models/giphy/image.dart';
 
-@immutable
 class GiphyImages {
   const GiphyImages({
     required this.fixedHeightStill,

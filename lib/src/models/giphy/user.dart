@@ -1,6 +1,3 @@
-import 'package:freezed_annotation/freezed_annotation.dart';
-
-@immutable
 class GiphyUser {
   const GiphyUser({
     this.avatarUrl,

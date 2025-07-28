@@ -1,18 +1,16 @@
-import 'package:freezed_annotation/freezed_annotation.dart';
+class MediaFormat {
+  const MediaFormat({
+    required this.url,
+    required this.dims,
+  });
 
-part 'media_format.freezed.dart';
-part 'media_format.g.dart';
+  final String url;
+  final List<num> dims;
 
-@Freezed(toJson: false)
-class MediaFormat with _$MediaFormat {
-  const factory MediaFormat({
-    required String url,
-    required List<num> dims,
-  }) = _MediaFormat;
-
-  factory MediaFormat.fromJson(Map<String, dynamic> json) =>
-      _$MediaFormatFromJson(json);
-  const MediaFormat._();
+  factory MediaFormat.fromJson(Map<String, dynamic> json) => MediaFormat(
+        url: json['url'] as String,
+        dims: (json['dims'] as List<dynamic>).map((e) => e as num).toList(),
+      );
 
   double get aspectRatio => dims.first / dims.last;
 }

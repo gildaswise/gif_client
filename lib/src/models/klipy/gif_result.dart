@@ -21,6 +21,7 @@ class KlipyGifResult {
         title: json['title'] as String,
         alt: json['content_description'] as String,
         mediaFormats: KlipyMediaFormats.fromJson(
-            json['media_formats'] as Map<String, dynamic>),
+          json['media_formats'] as Map<String, dynamic>,
+        ),
       );
 }

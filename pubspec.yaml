@@ -1,6 +1,6 @@
 name: gif_client
-description: GIF client for Tenor and GIPHY
-version: 0.4.0
+description: GIF client for Tenor, GIPHY, Klipy and heypster
+version: 0.5.0
 homepage: https://github.com/gildaswise/gif_client
 repository: https://github.com/gildaswise/gif_client
 

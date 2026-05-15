@@ -1,24 +1,23 @@
 // ignore_for_file: conditional_uri_does_not_exist
 
 import 'dart:convert';
-
-import 'package:gif_client/src/models/tenor/models.dart';
 import 'package:http/http.dart' as http;
+import 'package:gif_client/src/models/klipy/models.dart';
 
-const kBaseAuthority = 'tenor.googleapis.com';
+const _kBaseAuthority = 'api.klipy.com';
 
-class Endpoints {
-  const Endpoints._();
+class KlipyEndpoints {
+  const KlipyEndpoints._();
 
   static Uri search({
     required Map<String, String> auth,
     required String query,
     int limit = 20,
     String? next,
-    List<MediaFilter> mediaFilters = MediaFilter.values,
+    List<KlipyMediaFilter> mediaFilters = KlipyMediaFilter.values,
   }) =>
       Uri.https(
-        kBaseAuthority,
+        _kBaseAuthority,
         '/v2/search',
         {
           ...auth,
@@ -35,7 +34,7 @@ class Endpoints {
     int limit = 20,
   }) =>
       Uri.https(
-        kBaseAuthority,
+        _kBaseAuthority,
         '/v2/autocomplete',
         {
           ...auth,
@@ -50,7 +49,7 @@ class Endpoints {
     String? next,
   }) =>
       Uri.https(
-        kBaseAuthority,
+        _kBaseAuthority,
         '/v2/trending_terms',
         {
           ...auth,
@@ -65,7 +64,7 @@ class Endpoints {
     String? query,
   }) =>
       Uri.https(
-        kBaseAuthority,
+        _kBaseAuthority,
         '/v2/registershare',
         {
           ...auth,
@@ -77,10 +76,10 @@ class Endpoints {
   static Uri posts({
     required Map<String, String> auth,
     required List<String> ids,
-    List<MediaFilter> mediaFilters = MediaFilter.values,
+    List<KlipyMediaFilter> mediaFilters = KlipyMediaFilter.values,
   }) =>
       Uri.https(
-        kBaseAuthority,
+        _kBaseAuthority,
         '/v2/posts',
         {
           ...auth,
@@ -92,11 +91,11 @@ class Endpoints {
   static Uri featured({
     required Map<String, String> auth,
     int limit = 20,
-    List<MediaFilter> mediaFilters = MediaFilter.values,
+    List<KlipyMediaFilter> mediaFilters = KlipyMediaFilter.values,
     String? next,
   }) =>
       Uri.https(
-        kBaseAuthority,
+        _kBaseAuthority,
         '/v2/featured',
         {
           ...auth,
@@ -107,12 +106,12 @@ class Endpoints {
       );
 }
 
-extension TenorHttpExtension on http.Response {
+extension KlipyHttpExtension on http.Response {
   bool get success => statusCode >= 200 && statusCode < 300;
 }
 
-class TenorClient {
-  TenorClient({
+class KlipyClient {
+  KlipyClient({
     required this.apiKey,
     required this.countryCode,
     required this.clientKey,
@@ -131,13 +130,13 @@ class TenorClient {
     'contentfilter': 'medium',
   };
 
-  Future<TenorResponse?> search(
+  Future<KlipyResponse?> search(
     String query, {
     int limit = 20,
     String? next,
   }) async {
     final res = await _client.get(
-      Endpoints.search(
+      KlipyEndpoints.search(
         auth: _auth,
         query: query,
         limit: limit,
@@ -146,17 +145,17 @@ class TenorClient {
     );
     if (res.success) {
       final data = jsonDecode(res.body) as Map;
-      return TenorResponse.fromJson(Map<String, dynamic>.from(data));
+      return KlipyResponse.fromJson(Map<String, dynamic>.from(data));
     }
     return null;
   }
 
-  Future<TenorResponse?> featuredGifs({
+  Future<KlipyResponse?> featuredGifs({
     int limit = 20,
     String? next,
   }) async {
     final res = await _client.get(
-      Endpoints.featured(
+      KlipyEndpoints.featured(
         auth: _auth,
         limit: limit,
         next: next,
@@ -164,7 +163,7 @@ class TenorClient {
     );
     if (res.success) {
       final data = jsonDecode(res.body) as Map;
-      return TenorResponse.fromJson(Map<String, dynamic>.from(data));
+      return KlipyResponse.fromJson(Map<String, dynamic>.from(data));
     }
     return null;
   }
@@ -173,7 +172,7 @@ class TenorClient {
     int limit = 20,
   }) async {
     final res = await _client.get(
-      Endpoints.trendingTerms(
+      KlipyEndpoints.trendingTerms(
         auth: _auth,
         limit: limit,
       ),
@@ -190,7 +189,7 @@ class TenorClient {
     int limit = 20,
   }) async {
     final res = await _client.get(
-      Endpoints.autocomplete(
+      KlipyEndpoints.autocomplete(
         auth: _auth,
         query: query,
         limit: limit,
@@ -208,7 +207,7 @@ class TenorClient {
     String? query,
   }) async {
     final res = await _client.get(
-      Endpoints.registerShare(
+      KlipyEndpoints.registerShare(
         auth: _auth,
         id: id,
         query: query,

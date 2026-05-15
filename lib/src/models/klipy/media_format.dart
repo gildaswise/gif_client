@@ -1,3 +1,5 @@
+import 'package:path/path.dart' as p;
+
 class KlipyMediaFormat {
   const KlipyMediaFormat({
     required this.url,
@@ -6,6 +8,8 @@ class KlipyMediaFormat {
 
   final String url;
   final List<num> dims;
+
+  String get id => p.basenameWithoutExtension(url);
 
   factory KlipyMediaFormat.fromJson(Map<String, dynamic> json) =>
       KlipyMediaFormat(

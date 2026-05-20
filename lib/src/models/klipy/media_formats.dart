@@ -20,7 +20,7 @@ class KlipyMediaFormats {
   final KlipyMediaFormat gif;
 
   String get fullUrl =>
-      '${gif.url}&url?hh=${gif.dims.last}&ww=${gif.dims.first}&mp4=${mp4.id}&webm=${webm.id}';
+      '${gif.url}?hh=${gif.dims.last}&ww=${gif.dims.first}&mp4=${mp4.id}&webm=${webm.id}';
 
   factory KlipyMediaFormats.fromJson(Map<String, dynamic> json) =>
       KlipyMediaFormats(
